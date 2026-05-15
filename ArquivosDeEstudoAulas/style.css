@@ -1,5 +1,32 @@
 h1 {
   text-align: center;
-  color: pink;
+  color: rgb(212, 10, 44);
+  font-size: 40px;
+  text-shadow: 2px 2px rgb(63, 8, 8) ;
+  font-family: serif;
+}
+
+h2 {
+  height: 30px;
+  text-align: center;
+  background-color: pink;
+  opacity: 1.0;
+  color:rgb(198, 82, 101)
+}
+
+hr {
+  
+  color: rgb(151, 16, 16);
+}
+
+ul {
+  text-align: center;
+  list-style-type: none
+}
+
+p {
+  color: rgb(21, 22, 23);
+  font-size: 25px;
+  text-align: center;
 }
 
