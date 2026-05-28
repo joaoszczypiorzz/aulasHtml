@@ -1,0 +1,144 @@
+body {
+   
+    background-color: #a4b0c7; 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+}
+
+h1 {
+    text-align: center;
+    color: #1c2a48; 
+    font-size: 50px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin: 20px 0;
+  } 
+
+.centralizarElem {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 10vh;   
+    padding: 20px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    min-height: 220px; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1); 
+    background-color: #fafafa;
+    animation: giraDiv 5s infinite ;
+    
+}
+
+@keyframes giraDiv {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
+
+.divPrincipal {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.estiloBottom {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    background-color: #3b5998; 
+    color: white;
+    font-weight: bold;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1); 
+}
+
+.products {
+    width: 80%;
+    margin: 40px auto; 
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    padding-bottom: 30px;
+    
+}
+
+.img-produto {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.estiloBottom:hover {
+    background-color: #273b6b;
+}
+
+footer {
+    background-color: #1c2a48; 
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0; 
+    box-shadow: 0px -2px 10px rgba(0,0,0,0.2);
+}
+
+.footer-content p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.footer-links a {
+    color: #a4b0c7; 
+    text-decoration: none; 
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff; 
+}
+
+.descricao-produto {
+    font-size: 12px; 
+    color: #555555; 
+    text-align: center;
+    margin: 0 10px 15px 10px;
+    line-height: 1.4; 
+}
