@@ -1,0 +1,49 @@
+body {
+  background-color: #a4b0c7;
+}
+.tabela{
+    width: 90%;
+    margin: 10px;
+    border-collapse: collapse;
+}
+
+.divPrincipal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+.divContainer {
+    width: 60%;
+    height: 500px;
+    margin: 40px auto; 
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    padding-bottom: 30px;
+}
+
+.centralizarElem {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 10vh;   
+    padding: 20px;
+    text-align: center;
+}
+
+th,td{
+    padding: 7px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#sla{
+    background-color: orange;
+}
+
+.infoDiadia{
+    background-color: white;
+}
