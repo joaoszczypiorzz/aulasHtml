@@ -7,47 +7,170 @@
   <style>
 
     body {
-      background-color: #a4b0c7; 
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+      background-size: 200% 200%;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
     }
 
-    h1#Tituloforms {
+    h1 {
       text-align: center;
-      color: rgb(48, 48, 129);
-      font-size: 60px;
-      text-shadow: 2px 1px black;
-      font-family: "Playfair Display", serif;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-      margin-bottom: 30px;
-      padding: 20px;
+      font-size: 3rem; 
+      font-weight: 900; 
+      color: #ffffff;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
+                   0 1px 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 35px;  
     }
 
     .container {
-      width: 50%;
-      height: 500px;
-      margin: 40px auto; 
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 15px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      background: rgba(255, 255, 255, 0.95); 
+      max-width: 650px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 16px; 
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
     }
 
-    form#formulario {
+    .forms {
       display: flex;
-      flex-direction: column;  
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
       padding: 20px;
-      text-align: center;
-      max-width: 400px;
-      margin: 0 auto;
+      row-gap: 25px;
     }
 
-    input {
-      margin-top: auto;
-      border: 1px border #ccc;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-      padding: 5px;
+    .grupo-campos {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 600px; 
+      width: 100%;
+      margin: 0 auto; 
+      background-color: #f8fafc;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: wrap;
+      flex-direction: column;
+      flex: 1 1 200px;
+    }
+
+    fieldset#dadosPessoais{
+      border: 1px solid black;
+      border-radius: 15px;
+      font-size: 17px;
+      font-style: italic;
+    }
+
+    fieldset#cursoInteresses {
+      border: 1px solid black;
+      border-radius: 15px;
+      font-size: 17px;
+      font-style: italic;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+      color: white;
+      padding: 14px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    div#enviar {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .grupo-campos legend {
+      font-weight: 600;
+      color: #475569;
+      padding: 0 8px;
+      font-size: 1rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1 1 240px; 
+    }
+
+    .input-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748b; 
+    }
+
+    .input-group input, 
+    .input-group textarea, 
+    .input-group select {
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: #ffffff;
+      color: #1e293b;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #3b82f6; 
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); 
+    }
+
+    .btn-enviar:hover {
+      background-color: #2563eb;
+    }
+
+    /*Responsividade Basica para o site */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+      }
+      .container {
+        padding: 25px 20px;
+      }
+      .grupo-campos {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      .input-group {
+        flex: 1 1 100%;
+      }
+      input[type=submit] {
+        width: 100%;
+      }
     }
 
   </style>
@@ -62,71 +185,145 @@
 
       <section>
         <div class="container">
-        <form id="formulario">
-          <label for="nomeCompleto"> Nome Completo </label>
-            <input 
-            type="text"
-            id="nomeCompleto"
-            name="nomeUsuario"
-            >
+          <div class="forms">
+            <form id="formulario">
+              <div class="dadosPessoais">    
+                <fieldset id="dadosPessoais" class="grupo-campos">
+                  <legend> Dados Pessoais</legend>
+                    <div class="input-group">
+                    <label for="nomeCompleto"> Nome Completo </label>
+                      <input 
+                      type="text"
+                      id="nomeCompleto"
+                      name="nomeUsuario"
+                      placeholder="Seu nome completo"
+                      >
+                    </div>  
 
-          <label for="email">E-mail</label>
+                    <div class="input-group">
+                    <label for="email">E-mail</label>
 
-            <input
-            type="email"
-            id="email"
-            name="usuarioEmail"
-            >
-          
-          <label for="senhaConf">Senha</label>
-            <input 
-            type="password" 
-            name="senha" 
-            id="senhaConf"
-            >  
+                      <input
+                      type="email"
+                      id="email"
+                      name="usuarioEmail"
+                      placeholder="seu e-mail"
+                      >
+                    </div>  
 
-          <label for="nascimento">Data Nascimento</label>
-           <input 
-           type="date" 
-           name="dataNascimento" 
-           id="nascimento"
-           >  
-          <label for="graduacao">Curso</label>
-            <input 
-            type="text" 
-            name="cursos" 
-            id="graduacao"
-            > 
+                    <div class="input-group">
+                    <label for="senhaConf">Senha</label>
+                      <input 
+                      type="password" 
+                      name="senha" 
+                      id="senhaConf"
+                      placeholder="password"
+                      >  
+                    </div>
 
-          <label for="interesses"> Interesses </label>
-            <input 
-            type="text"
-            name="intere"
-            id="interesses"
-            >  
+                    <div class="input-group">
+                      <label for="apelido"> Como deseja ser chamado (Apelido) </label>
+                        <input 
+                        type="text" 
+                        name="apelido" 
+                        id="apelido"
+                        placeholder="Seu Apelido"
+                        >
+                    </div>
 
-          <label for="sexo"> Sexo </label>
-            <input 
-              type="text"
-              name="mas/fem"
-              id="sexo"
-              >  
+                  <div class="input-group">  
+                    <label for="nascimento">Data Nascimento</label>
+                    <input 
+                    type="date" 
+                    name="dataNascimento" 
+                    id="nascimento"
+                    > 
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="sexo"> Sexo </label>
+                      <input 
+                        type="text"
+                        name="mas/fem"
+                        id="sexo"
+                        placeholder="Homem/Mulher"
+                        >   
+                  </div>    
+                </fieldset> 
+              </div>   
 
-           <label for="comentarios"> Comentários </label>
-            <input
-             type="text"
-             name="comentarios"
-             id="comentarios"
-             >   
+              <div class="cursoInteresses">
+                  <fieldset id="cursoInteresses" class="grupo-campos">
+                    <legend> Curso e Interesses </legend>
 
-           <label for="img">Imagem para upload </label> 
-            <input 
-              type="image"
-              name="campoImg"
-              id="img"
-              > 
-        </form>
-        </div>
+                      <div class="input-group">
+                        <label for="graduacao">Curso</label>
+                          <input 
+                          type="text" 
+                          name="cursos" 
+                          id="graduacao"
+                          placeholder="Seu curso"
+                          > 
+                      </div>
+
+                      <div class="input-group">
+                        <label for="ano">Ano que está cursando</label>
+                        <input 
+                        type="text"
+                        name="ano"
+                        id="ano"
+                        placeholder="Ano/Semestre"
+                        >
+                      </div>
+                      
+                      <div class="input-group">
+                        <label for="interesses"> Interesses </label>
+                          <input 
+                          type="text"
+                          name="intere"
+                          id="interesses"
+                          placeholder="Seus interesses"
+                          >  
+                      </div>  
+
+                      <div class="input-group">
+                        <label for="comentarios"> Comentários </label>
+                          <input
+                          type="text" 
+                          name="comentarios"
+                          id="comentarios"
+                          placeholder="Escreva algum comentário aqui.."
+                          >   
+                      </div>
+
+                      <div class="input-group">
+                        <label for="experiencias">Experiências adquiridas <br>(trabalhos/Pesquisas/etc)</label>
+                        <input 
+                        type="text"
+                        name="experiencias"
+                        id="experiencias"
+                        placeholder="Suas Experiências"
+                        >
+                      </div>  
+
+                      <div class="input-group">
+                          <label for="img">Imagem sua durante a graduação </label> 
+                            <input 
+                            type="image"
+                            name="campoImg"
+                            id="img"
+                            > 
+                      </div>
+
+                  </fieldset>
+                </div>  
+
+                <div id="enviar">
+                  <input type="submit" id="enviar">  
+                </div>
+            </form>
+          </div>
+        </div>  
       </section>
 
     </main>
