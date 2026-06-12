@@ -39,4 +39,23 @@ let ultimoNum = array_cinconums[array_cinconums.length-1]
 let soma = num1 + ultimoNum
 console.log(soma)
 
+let aluno = {
+  nome: "João Vitor",
+  idade: 19,
+  notas: [10, 10, 10]
+}
+
+let somaNotas = 0;
+for(let i = 0; i < aluno.notas.length; i++) {
+  somaNotas += aluno.notas[i]
+}
+
+let media = somaNotas/aluno.notas.length
+
+if(media >= 7) {
+  console.log(`O aluno ${aluno.nome} ficou com ${Math.trunc(media)} de media geral e está Aprovado`)
+} else {
+  console.log(`O aluno ${aluno.nome} ficou com ${Math.trunc(media)} de media geral e está Reprovado`)
+}
+
 
